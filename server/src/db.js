@@ -33,9 +33,9 @@ let select = (query, res) => {
   return promise;
 };
 
-let getIdFromUsername = id => {
+let getIdFromUsername = name => {
   let connection = connect();
-  let query = `select id from users where name like '${id}'`;
+  let query = `select id from users where name like '${name}'`;
   let promise = new Promise(function(resolve, reject) {
     connection.query(query, (err, results, fields) => {
       if (err) {
