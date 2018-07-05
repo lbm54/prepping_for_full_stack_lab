@@ -23,7 +23,7 @@ class ChirpDetails extends Component {
   async componentDidMount() {
     let response = await fetch(`/api/chirps/${this.id}`);
     let json = await response.json();
-    this.setState({ details: json });
+    this.setState({ details: json[this.id] });
   }
 
   render() {

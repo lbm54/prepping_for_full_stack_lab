@@ -40,7 +40,7 @@ class EditChirp extends Component {
   async componentDidMount() {
     let response = await fetch(`/api/chirps/${this.id}`);
     let json = await response.json();
-    this.setState({ name: json.name, body: json.body});
+    this.setState({ name: json[this.id].name, body: json[this.id].body});
   }
 
   render() {
